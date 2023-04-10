@@ -30,5 +30,4 @@ public class String_utilTest {
             String_util.repeat("hola", -1);
         });
     }
-    
 }
