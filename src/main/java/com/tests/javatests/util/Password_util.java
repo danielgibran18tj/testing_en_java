@@ -5,6 +5,14 @@ public class Password_util {
         WEAK, MEDIUM, STRONG
     }
     public static SecurityLevel assessPassword(String password){
-        return SecurityLevel.WEAK;
+        if (password.matches("[a-zA-Z]+")
+                ||password.matches("[1-9]+")
+                ||password.length()<8) {
+            return SecurityLevel.WEAK;
+        }else if (password.matches("[a-zA-Z1-9]+")) {
+            return SecurityLevel.MEDIUM;
+        }else {
+            return SecurityLevel.STRONG;
+        }
     }
 }
